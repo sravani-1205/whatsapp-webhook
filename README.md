@@ -36,6 +36,16 @@ whatsapp-webhook/
 ├── .gitignore
 ├── README.md
 │
-├── .env              # Not committed to GitHub
-├── messages.db       # Not committed to GitHub
-└── venv/             # Not committed to GitHub
+├── .env              # Hided
+├── messages.db       # Hided 
+└── venv/             # Hided
+
+## Live Deployment
+
+The application is deployed on Render.
+
+Live URL:
+https://whatsapp-webhook-1t2g.onrender.com
+
+Swagger API Documentation:
+https://whatsapp-webhook-1t2g.onrender.com/docs
