@@ -4,7 +4,6 @@ from dotenv import load_dotenv
 import sqlite3
 import os
 import json
-from datetime import datetime
 
 
 # Load environment variables from .env
@@ -80,7 +79,13 @@ def verify_webhook(
     return the challenge. Otherwise return 403.
     """
 
-    if hub_verify_token != VERIFY_TOKEN:
+    # Reject the request if either the server token
+    # or the request token is missing.
+    if (
+        VERIFY_TOKEN is None
+        or hub_verify_token is None
+        or hub_verify_token != VERIFY_TOKEN
+    ):
         raise HTTPException(
             status_code=403,
             detail="Invalid verification token"
